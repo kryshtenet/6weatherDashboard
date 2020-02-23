@@ -1,0 +1,32 @@
+.header
+{
+    box-sizing: border-box;
+    background-color: rgb(63, 64, 68);
+    color: white;
+    text-align: center;
+}
+.searchCity
+{
+    background-color: rgb(230, 221, 221);
+}
+#inputBoxName
+{
+    font-weight: bold;
+}
+.list-group
+{
+    
+}
+.weatherBoxes
+{
+    text-align: left;
+    background-color: whitesmoke;
+}
+.todayWeather
+{
+    width: 400px;
+    height: 300px;
+    border: 1px solid grey;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
