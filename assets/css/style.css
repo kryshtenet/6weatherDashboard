@@ -5,9 +5,11 @@
     color: white;
     text-align: center;
 }
-.searchCity
+.searchCityForm
 {
     background-color: rgb(230, 221, 221);
+    height: 600px;
+    width: 400px;
 }
 #inputBoxName
 {

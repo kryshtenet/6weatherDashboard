@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,6 +12,7 @@
 
     <title>Weather Dashboard</title>
   </head>
+
   <body>
       <!--Header-->
       <div class="container-fluid">
@@ -23,36 +25,32 @@
         <!--Area to Search City; Prior Cities Searched-->
         <div class="row">
           <div class="searchCity col-lg-4">
-            <label for="Cities" id="inputBoxName">Search for a City:</label>
-            <input type="text" class="form-control col-md-4" id="city" placeholder="Enter City">
+            <label for="cities" id="inputBoxName">Search for a City:</label>
+            <form class="form-inline">
+                <input type="text" class="form-control col-md-4" id="city" placeholder="Enter City">
+                <button type="submit" class="cityBtn btn-dark mb-1">Submit</button>
+            </form>
 
             <br>
-          
-            <div class="list-group col-lg-6">
-              <a href="#" class="list-group-item">Searched 8</a>
-              <a href="#" class="list-group-item">Searched 7</a>
-              <a href="#" class="list-group-item">Searched 6</a>
-              <a href="#" class="list-group-item">Searched 5</a>
-              <a href="#" class="list-group-item">Searched 4</a>
-              <a href="#" class="list-group-item">Searched 3</a>
-              <a href="#" class="list-group-item">Searched 2</a>
-              <a href="#" class="list-group-item">Searched 1</a>
+            <div>
+                <ul class="savedSearch list-group col-xl-7">
+                    <li class="list-group-item"></a>
             </div>
           </div>
-      
-
+  
           <div class="weatherBoxes col-lg-8">
             <!--Display of Weather Today-->
             <div class="row">
               <div class="todayWeather col-lg-12">
                 <h3><b>Today's Weather</b></h3>
-                <br>
-                <p>Temperature: </p>
-                <p>Humidity: </p>
-                <p>Wind Speed: </p>
-                <p>UV Index: </p>
+                    <br>
+                <div id="temperature"><p>Temperature: </p></div>
+                <div id="humidity"><p>Humidity: </p></div>
+                <div id="windSpeed"><p>Wind Speed: </p></div>
+                <div id="uvIndex"><p>UV Index: </p></div>
               </div>
             </div>
+
             <!--Display of 5-Day Forecast-->
             <div class="row">
               <h3><b>5-Day Forecast</b></h3>
@@ -69,17 +67,19 @@
             </div>
           </div>
         </div>
+
     
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <!-- OpenWeather Map JavaScript-->
-    <script src="http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=82f7826c88e27ea6666cd198fcd8453b"></script>
+
+            <!-- Optional JavaScript -->
+
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+            <!-- OpenWeather Map JavaScript-->
+            <script src="http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=82f7826c88e27ea6666cd198fcd8453b"></script>
   </body>
 </html>
-
-
