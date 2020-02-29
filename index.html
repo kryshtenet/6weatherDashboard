@@ -28,7 +28,7 @@
             <label for="cities" id="inputBoxName">Search for a City:</label>
             <form class="form-inline">
                 <input type="text" class="form-control col-md-4" id="city" placeholder="Enter City">
-                <button type="submit" class="citySearchBtn btn-dark mb-1">Search</button>
+                <button type="submit" id="citySearchBtn btn-dark mb-1">Search</button>
             </form>
 
             <br>
@@ -41,9 +41,10 @@
           <div class="weatherBoxes col-lg-8">
             <!--Display of Weather Today-->
             <div class="row">
-              <div class="todayWeather col-lg-12">
+              <div id="todayWeather col-lg-12">
                 <h3><b>Today's Weather</b></h3>
                     <br>
+                <div class="city"></div>
                 <div id="temperature"><p>Temperature: </p></div>
                 <div id="humidity"><p>Humidity: </p></div>
                 <div id="windSpeed"><p>Wind Speed: </p></div>
@@ -79,5 +80,42 @@
 
             <!-- OpenWeather Map JavaScript-->
             <script src="http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=82f7826c88e27ea6666cd198fcd8453b"></script>
+  
+  <script>
+     
+ function searchWeatherInCities(cities){
+   //Storing the Open Weather Map API URL for the weather
+   var queryURL = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=" +
+   pastSearches + "82f7826c88e27ea6666cd198fcd8453b";
+
+   //Perfoming an AJAX GET request to our queryURL
+   $.ajax({
+   url: queryURL,
+   method: "GET"
+   }).then(function(response){
+
+
+    console.log(queryURL);
+    console.log(response);
+
+    // Transfer content to HTML
+    $(".temperature").text("Temperature (F): " + main.temp);
+    $(".humidity").text("Humidity: " + response.humidity);
+    $(".windSpeed").text("Wind Speed: " + response.wind.speed);
+    $(".uvIndex").text("" + response.uv.index);
+    })
+
+    // Converts the temp to Kelvin with the below formula
+    var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+        $(".tempF").text("Temperature (Kelvin) " + tempF);
+
+        console.log("Wind Speed: " + response.wind.speed);
+        console.log("Humidity: " + response.main.humidity);
+        console.log("Temperature (F): " + response.main.temp);
+
+ }
+  </script>
+  
+  
   </body>
 </html>
